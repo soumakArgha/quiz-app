@@ -1,18 +1,11 @@
+const express = require('express');
 const path = require('path')
-const  express = require('express')
-
 const app = express()
 
-const port = 5000
+const port = process.env.port || 5000
 
-app.get('/api/questions', (req, res) => {
-    res.set('Content-Type', 'application/json')
-    res.sendFile(path.join(__dirname, 'questions.json'))
-})
+app.use(express.static(path.join(__dirname, "build")))
 
 app.listen(port, () => {
-    console.log("Server started at http://localhost:"+port)
+    console.log("Server started at " + port)
 })
-
-
-

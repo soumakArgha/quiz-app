@@ -1,6 +1,8 @@
-export const RIGHT_ANSWER = "RIGHT_ANSWER"
-export const GET_ANSWER = "GET_ANSWER"
-
+//load all questions
 export const LOAD_QUESTIONS = "LOAD_QUESTIONS"
 
+//get the next question
 export const NEXT_QUESTION = "NEXT_QUESTION"
+
+//for choosing answer
+export const CHOOSE_ANSWER = "CHOOSE_ANSWER"

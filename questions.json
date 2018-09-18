@@ -1,6 +1,6 @@
 [{
     "id": "001",
-    "question": "Who is Vodor",
+    "question": "Who is Vodor?",
     "options": [
         "Suvankar Nandy",
         "Suvankar Rendy",
@@ -10,12 +10,62 @@
     "answer": "Suvankar Nandy"
 },{
     "id": "002",
-    "question": "Who is Gunda",
+    "question": "Who is Gunda?",
     "options": [
+        "Junayed",
+        "Soumak",
         "Subh",
-        "Vodor",
-        "Magi",
-        "Harami"
+        "Ankan"
     ],
     "answer": "Subh"
+},{
+    "id": "003",
+    "question": "Who is Magi?",
+    "options": [
+        "Haimee",
+        "Sayan",
+        "Ankan",
+        "Junayed"
+    ],
+    "answer": "Ankan"
+},{
+    "id": "004",
+    "question": "Who is PM (Panty Man)?",
+    "options": [
+        "Mecho",
+        "Vodor",
+        "Debota Da",
+        "Harami"
+    ],
+    "answer": "Mecho"
+},{
+    "id": "005",
+    "question": "Who loves Ankan?",
+    "options": [
+        "Haimee",
+        "Kavita",
+        "Ankana",
+        "Junayed"
+    ],
+    "answer": "Haimee"
+},{
+    "id": "006",
+    "question": "Who is Harami?",
+    "options": [
+        "Paritosh",
+        "Sanjib",
+        "Soumak",
+        "Sayan"
+    ],
+    "answer": "Sanjib"
+},{
+    "id": "007",
+    "question": "Who is Baka?",
+    "options": [
+        "Aparesh",
+        "Soumik",
+        "Suvankar",
+        "Junayed"
+    ],
+    "answer": "Soumik"
 }]

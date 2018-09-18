@@ -1,9 +1,8 @@
 import {combineReducers} from 'redux'
-import questions from './questionsReducer'
-import ui from './uiReducer'
+import quiz from './quizReducer'
+
 const rootReducer = combineReducers({
-    questions,
-    ui
+    quiz
 })
 
 export default rootReducer

@@ -1,0 +1,21 @@
+[{
+    "id": "001",
+    "question": "Who is Vodor",
+    "options": [
+        "Suvankar Nandy",
+        "Suvankar Rendy",
+        "Suvankar Chungi",
+        "Suvankar Lungi"
+    ],
+    "answer": "Suvankar Nandy"
+},{
+    "id": "002",
+    "question": "Who is Gunda",
+    "options": [
+        "Subh",
+        "Vodor",
+        "Magi",
+        "Harami"
+    ],
+    "answer": "Subh"
+}]

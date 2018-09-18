@@ -1,0 +1,6 @@
+export const RIGHT_ANSWER = "RIGHT_ANSWER"
+export const GET_ANSWER = "GET_ANSWER"
+
+export const LOAD_QUESTIONS = "LOAD_QUESTIONS"
+
+export const NEXT_QUESTION = "NEXT_QUESTION"

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
-    Button
+    Button,
+    LinearProgress
 } from '@material-ui/core'
 import {connect} from 'react-redux'
 import {choose_answer, load_questions, next_question} from '../actions'
@@ -13,51 +14,56 @@ class Questions extends Component {
     }
 
     render() {
-        return (
-            <React.Fragment>
-                <div className="container">
-                    {
-                        this.props.questions.map(((question, i) => {
-                            if(i === this.props.questionCount - 1) {
-                                return <Question 
-                                key={question.id}
-                                question={question.question}
-                                options={question.options}
-                                choose_answer={this.props.choose_answer}
-                                questionCount={this.props.questionCount}
-                                totalLength={this.props.questions.length}
-                                />
-                            }
-                        }))
-                    }
-
-
-
-                    <div style={{
-                        width: '100%',
-                        display: 'flex',
-                        justifyContent: 'flex-end'
-                    }}>
-                    {
-                        (this.props.nextButtonDisabled) ? 
-                        <Button variant='contained' disabled style={{
-                            height: '45px',
-                            width: '100px',
-                        }}>Next</Button> : 
-                        <Button variant='contained' onClick={this.props.next_question} style={{
-                            height: '45px',
-                            width: '100px',
-                            backgroundColor: '#4f6df5',
-                            color: '#fff'
-                        }}>Next</Button>
-                    }
-                
+        if(_.isEmpty(this.props.questions)) {
+            return <LinearProgress/>
+        } else {
+            return (
+                <React.Fragment>
+                    <div className="container">
+                        {
+                            this.props.questions.map(((question, i) => {
+                                if(i === this.props.questionCount - 1) {
+                                    return <Question 
+                                    key={question.id}
+                                    question={question.question}
+                                    options={question.options}
+                                    choose_answer={this.props.choose_answer}
+                                    questionCount={this.props.questionCount}
+                                    totalLength={this.props.questions.length}
+                                    />
+                                }
+                            }))
+                        }
+    
+    
+    
+                        <div style={{
+                            width: '100%',
+                            display: 'flex',
+                            justifyContent: 'flex-end'
+                        }}>
+                        {
+                            (this.props.nextButtonDisabled) ? 
+                            <Button variant='contained' disabled style={{
+                                height: '45px',
+                                width: '100px',
+                            }}>Next</Button> : 
+                            <Button variant='contained' onClick={this.props.next_question} style={{
+                                height: '45px',
+                                width: '100px',
+                                backgroundColor: '#4f6df5',
+                                color: '#fff'
+                            }}>Next</Button>
+                        }
+                    
+                        </div>
+                    
                     </div>
-                
-                </div>
-                
-            </React.Fragment>
-        )
+                    
+                </React.Fragment>
+            )
+        }
+        
     }
 }
 

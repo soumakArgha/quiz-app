@@ -9,3 +9,5 @@ export const CHOOSE_ANSWER = "CHOOSE_ANSWER"
 
 export const GET_STARTED = "GET_STARTED"
 
+export const RESET = "RESET"
+

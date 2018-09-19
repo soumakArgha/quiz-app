@@ -3,7 +3,8 @@ import {
     CHOOSE_ANSWER,
     LOAD_QUESTIONS,
     NEXT_QUESTION,
-    GET_STARTED
+    GET_STARTED,
+    RESET
 } from './types'
 import {
     db
@@ -41,11 +42,13 @@ export const load_questions = () => {
 
 
         db.collection('quiz_questions').orderBy("id", "asc").get().then(snap => {
+            let questions = []
             snap.forEach(doc => {
-                dispatch({
-                    type: LOAD_QUESTIONS,
-                    payload: doc.data()
-                })
+                questions.push(doc.data())
+            })
+            dispatch({
+                type: LOAD_QUESTIONS,
+                payload: questions
             })
         })
     }
@@ -53,14 +56,19 @@ export const load_questions = () => {
 
 export const get_start = (name) => {
     return {
-        type: 'GET_STARTED',
+        type: GET_STARTED,
         payload: name
     }
 }
 
 export const next_question = () => {
-
     return {
         type: NEXT_QUESTION
+    }
+}
+
+export const reset = () => {
+    return {
+        type: RESET
     }
 }

@@ -1,4 +1,10 @@
-import { LOAD_QUESTIONS, NEXT_QUESTION, CHOOSE_ANSWER, GET_STARTED} from "../actions/types";
+import {
+    LOAD_QUESTIONS,
+    NEXT_QUESTION,
+    CHOOSE_ANSWER,
+    GET_STARTED,
+    RESET
+} from "../actions/types";
 
 const defaultState = {
     startQuiz: false,
@@ -12,18 +18,20 @@ const defaultState = {
 }
 
 const quizReducer = (state = defaultState, action) => {
-    switch(action.type) {
-        case LOAD_QUESTIONS: 
+    switch (action.type) {
+        case LOAD_QUESTIONS:
             return {
                 ...state,
-                questions: [...state.questions].concat([action.payload])
+                // questions: [...state.questions].concat([action.payload])
+                questions: action.payload
             }
         case NEXT_QUESTION:
-            let score, isFinish = state.finishQuiz, count;
-            
-            (state.questions[state.questionCount - 1].answer === state.chooseAnswer) ? score = state.score + 1 : score = state.score;
-            if(state.questions.length >= state.questionCount) {
-                if(state.questions.length === state.questionCount) {
+            let score, isFinish = state.finishQuiz,
+                count;
+
+            (state.questions[state.questionCount - 1].answer === state.chooseAnswer) ? score = state.score + 1: score = state.score;
+            if (state.questions.length >= state.questionCount) {
+                if (state.questions.length === state.questionCount) {
                     isFinish = true;
                 }
                 count = state.questionCount + 1
@@ -36,7 +44,7 @@ const quizReducer = (state = defaultState, action) => {
                 finishQuiz: isFinish
             }
 
-        case GET_STARTED: 
+        case GET_STARTED:
             return {
                 ...state,
                 startQuiz: true,
@@ -45,9 +53,11 @@ const quizReducer = (state = defaultState, action) => {
         case CHOOSE_ANSWER:
             return {
                 ...state,
-                 chooseAnswer: action.payload,
-                 nextButtonDisabled: false
-                }
+                chooseAnswer: action.payload,
+                nextButtonDisabled: false
+            }
+        case RESET:
+            return defaultState
         default:
             return state
     }

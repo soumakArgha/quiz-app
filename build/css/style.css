@@ -120,6 +120,65 @@ body {
     color: #FF5F6D;
 }
 
+#welcome {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background: #eeeeee;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #444;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+#welcome h1 {
+    font-size: 70px;
+    font-weight: 300;
+    font-family: 'Dancing Script', cursive;
+
+}
+
+.name {
+    height: 50px;
+    width: 350px;
+    margin: 30px 0 10px;
+    background-color: #fff;
+    color: #444;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    border-radius: 3px;
+    outline: none;
+    text-indent: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    
+}
+
+.start {
+    height: 50px;
+    width: 120px;
+    background-color: #4f6df5;;
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin: 10px 0 0;
+    outline: none;
+    cursor: pointer;
+    transition: all 200ms linear;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.start:hover, .start:active {
+    transform: translateY(-5px)
+}
+
 @media only screen and (max-width: 500px) {
     .container {
         width: 100%;

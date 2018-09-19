@@ -1,4 +1,4 @@
-import { LOAD_QUESTIONS, NEXT_QUESTION, CHOOSE_ANSWER} from "../actions/types";
+import { LOAD_QUESTIONS, NEXT_QUESTION, CHOOSE_ANSWER, GET_STARTED} from "../actions/types";
 
 const defaultState = {
     startQuiz: false,
@@ -7,7 +7,8 @@ const defaultState = {
     questions: [],
     questionCount: 1,
     chooseAnswer: '',
-    score: 0
+    score: 0,
+    userName: ''
 }
 
 const quizReducer = (state = defaultState, action) => {
@@ -33,6 +34,13 @@ const quizReducer = (state = defaultState, action) => {
                 nextButtonDisabled: true,
                 score,
                 finishQuiz: isFinish
+            }
+
+        case GET_STARTED: 
+            return {
+                ...state,
+                startQuiz: true,
+                userName: action.payload
             }
         case CHOOSE_ANSWER:
             return {

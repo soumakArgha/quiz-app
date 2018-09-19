@@ -2,7 +2,8 @@ import axios from 'axios'
 import {
     CHOOSE_ANSWER,
     LOAD_QUESTIONS,
-    NEXT_QUESTION
+    NEXT_QUESTION,
+    GET_STARTED
 } from './types'
 import {
     db
@@ -50,6 +51,12 @@ export const load_questions = () => {
     }
 }
 
+export const get_start = (name) => {
+    return {
+        type: 'GET_STARTED',
+        payload: name
+    }
+}
 
 export const next_question = () => {
 
